@@ -1,0 +1,10 @@
+{
+  "name": "UniFi Insights Exporter",
+  "assembly": "TechnitiumUniFiInsightsExporter.dll",
+  "version": "0.1.0",
+  "minimumTechnitiumVersion": "15.4.0",
+  "targetFramework": "net10.0",
+  "license": "GPL-3.0-only",
+  "repository": "https://github.com/Skalar06/technitium-unifi-insights-exporter",
+  "note": "Informational project metadata; Technitium DNS Server does not require a manifest inside app packages."
+}

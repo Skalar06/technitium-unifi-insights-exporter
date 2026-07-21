@@ -1,0 +1,17 @@
+<Project>
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <Reference Include="DnsServerCore.ApplicationCommon">
+      <HintPath>$(TechnitiumReferencePath)/DnsServerCore.ApplicationCommon.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="TechnitiumLibrary.Net">
+      <HintPath>$(TechnitiumReferencePath)/TechnitiumLibrary.Net.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="TechnitiumLibrary">
+      <HintPath>$(TechnitiumReferencePath)/TechnitiumLibrary.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

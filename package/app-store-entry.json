@@ -1,0 +1,14 @@
+{
+  "name": "UniFi Insights Exporter",
+  "description": "Exports Technitium DNS queries as dnsmasq-compatible RFC3164 UDP messages for UniFi Insights Plus using a bounded fail-open queue.",
+  "versions": [
+    {
+      "serverVersion": "15.4",
+      "version": "0.1.0",
+      "url": "https://github.com/Skalar06/technitium-unifi-insights-exporter/releases/download/v0.1.0/TechnitiumUniFiInsightsExporter-0.1.0.zip",
+      "size": "REPLACE_WITH_RELEASE_ASSET_SIZE"
+    }
+  ],
+  "license": "GPL-3.0-only",
+  "repository": "https://github.com/Skalar06/technitium-unifi-insights-exporter"
+}

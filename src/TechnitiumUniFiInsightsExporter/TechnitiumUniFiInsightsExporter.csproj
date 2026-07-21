@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AssemblyName>TechnitiumUniFiInsightsExporter</AssemblyName>
+    <RootNamespace>TechnitiumUniFiInsightsExporter</RootNamespace>
+    <Version>0.1.0</Version>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <FileVersion>0.1.0.0</FileVersion>
+    <Company>Technitium UniFi Insights Exporter contributors</Company>
+    <Authors>Technitium UniFi Insights Exporter contributors</Authors>
+    <Description>Exports Technitium DNS query events as dnsmasq-compatible RFC3164 UDP messages for UniFi Insights Plus.</Description>
+    <PackageProjectUrl>https://github.com/Skalar06/technitium-unifi-insights-exporter</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Skalar06/technitium-unifi-insights-exporter</RepositoryUrl>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <NoWarn>$(NoWarn);CA1711</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DnsServerCore.ApplicationCommon">
+      <HintPath>$(TechnitiumReferencePath)/DnsServerCore.ApplicationCommon.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TechnitiumLibrary.Net">
+      <HintPath>$(TechnitiumReferencePath)/TechnitiumLibrary.Net.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TechnitiumLibrary">
+      <HintPath>$(TechnitiumReferencePath)/TechnitiumLibrary.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="dnsApp.config" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../README.md" Link="README.md" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../LICENSE" Link="LICENSE" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../CHANGELOG.md" Link="CHANGELOG.md" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../package/package-manifest.json" Link="package-manifest.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

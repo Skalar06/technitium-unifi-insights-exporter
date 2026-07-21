@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test-package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Set up .NET
+        uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1
+        with:
+          dotnet-version: 10.0.100
+      - name: Build and test
+        run: ./scripts/test.sh
+      - name: Dependency audit
+        run: |
+          source scripts/common.sh
+          run_dotnet list TechnitiumUniFiInsightsExporter.slnx package --vulnerable --include-transitive
+      - name: Validate public content
+        run: ./scripts/validate-public-content.sh
+      - name: Build package
+        run: ./scripts/package.sh
+      - name: Verify reproducibility
+        run: ./scripts/verify-reproducible.sh
+      - name: Upload package
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: TechnitiumUniFiInsightsExporter-0.1.0
+          path: |
+            dist/TechnitiumUniFiInsightsExporter-0.1.0.zip
+            dist/TechnitiumUniFiInsightsExporter-0.1.0.zip.sha256
+          if-no-files-found: error

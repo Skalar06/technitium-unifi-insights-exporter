@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: github.ref == 'refs/tags/v0.1.0'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Test and package
+        run: |
+          ./scripts/test.sh
+          ./scripts/verify-reproducible.sh
+          ./scripts/validate-public-content.sh
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v0.1.0 \
+            dist/TechnitiumUniFiInsightsExporter-0.1.0.zip \
+            dist/TechnitiumUniFiInsightsExporter-0.1.0.zip.sha256 \
+            --title "Technitium UniFi Insights Exporter 0.1.0" \
+            --notes-file CHANGELOG.md \
+            --verify-tag
