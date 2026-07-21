@@ -11,6 +11,8 @@
 
 Install `dist/TechnitiumUniFiInsightsExporter-0.1.0.zip` on the Technitium primary under the app name `UniFi Insights Exporter`. Retain the package configuration with `enabled=false`.
 
+Before installation, verify that the ZIP contains both the application DLL and its matching `.deps.json`; Technitium 15.4 uses the dependency file to discover loadable app assemblies.
+
 On every node verify:
 
 - app name and version;

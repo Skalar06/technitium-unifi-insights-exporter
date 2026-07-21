@@ -49,4 +49,4 @@ The queue uses a capacity of 50,000, one reader, multiple writers, disabled sync
 
 ## Package
 
-Technitium installs a flat ZIP of compiled application output. The project metadata manifest in this package is informational; Technitium reads version and description from assembly metadata and stores configuration in `dnsApp.config`.
+Technitium installs a flat ZIP of compiled application output. Technitium 15.4 discovers application assemblies from matching `*.deps.json` files, so both `TechnitiumUniFiInsightsExporter.dll` and `TechnitiumUniFiInsightsExporter.deps.json` are mandatory package entries. The project metadata manifest is informational; Technitium reads version and description from assembly metadata and stores configuration in `dnsApp.config`.

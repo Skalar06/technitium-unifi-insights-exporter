@@ -11,7 +11,7 @@ readonly ZIP_PATH="${DIST_DIR}/TechnitiumUniFiInsightsExporter-${VERSION}.zip"
 
 rm -rf "${STAGE_DIR}"
 mkdir -p "${STAGE_DIR}" "${DIST_DIR}"
-for file in TechnitiumUniFiInsightsExporter.dll dnsApp.config README.md LICENSE CHANGELOG.md package-manifest.json; do
+for file in TechnitiumUniFiInsightsExporter.dll TechnitiumUniFiInsightsExporter.deps.json dnsApp.config README.md LICENSE CHANGELOG.md package-manifest.json; do
   cp "${OUTPUT_DIR}/${file}" "${STAGE_DIR}/${file}"
 done
 
