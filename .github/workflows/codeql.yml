@@ -29,13 +29,13 @@ jobs:
       - id: analyze
         uses: github/codeql-action/analyze@7188fc363630916deb702c7fdcf4e481b751f97a
         with:
-          output: ../results
+          output: results
           upload: ${{ github.event.repository.private && 'never' || 'always' }}
       - name: Upload private-repository SARIF
         if: github.event.repository.private == true
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: codeql-sarif
-          path: ../results/csharp.sarif
+          path: results/csharp.sarif
           if-no-files-found: error
           retention-days: 30
