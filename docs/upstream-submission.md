@@ -14,6 +14,10 @@ Body:
 >
 > Release and package: https://github.com/Skalar06/technitium-unifi-insights-exporter/releases/tag/v0.1.0
 >
+> Package size: 50.02 KB (51,216 bytes)
+>
+> SHA256: `bd1749a37c7c8090ec91179625724dcc1ab280d26b1d4f2e7a588b09fd9ee8da`
+>
 > License: GPL-3.0-only
 >
 > Proposed store metadata is available in `package/app-store-entry.json`.
