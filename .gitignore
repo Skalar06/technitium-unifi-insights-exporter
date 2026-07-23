@@ -2,7 +2,10 @@ bin/
 obj/
 TestResults/
 dist/
-artifacts/
+artifacts/*
+!artifacts/test-results/
+artifacts/test-results/*
+!artifacts/test-results/*.json
 .cache/
 .references/
 *.user

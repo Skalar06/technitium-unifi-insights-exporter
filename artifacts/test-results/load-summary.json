@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "status": "prepared-not-run",
+  "executed": false,
+  "profiles": [],
+  "limitations": [
+    "dnsperf is not installed in the current execution environment.",
+    "No baseline-versus-export latency claim has been made."
+  ]
+}

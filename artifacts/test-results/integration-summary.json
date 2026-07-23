@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "status": "completed-with-measurement-gaps",
+  "executed": true,
+  "startedAt": "2026-07-21T22:11:11Z",
+  "finishedAt": "2026-07-21T22:11:32Z",
+  "environment": {
+    "technitiumVersion": "15.4",
+    "unifiInsightsPlusVersion": "3.7.0",
+    "topology": "isolated Technitium test node to approval-gated UDP receiver",
+    "receiverAddress": "redacted",
+    "receiverPort": 1516,
+    "packageSha256": "ec9bad16a0ac4ea4fa22a58b00367304b7d4b0b9d9c22221e808f0cab4b9713b"
+  },
+  "testCases": [
+    {
+      "name": "fresh-install",
+      "status": "pass",
+      "expected": "query logger installed",
+      "observed": "Technitium API returned a loaded query logger"
+    },
+    {
+      "name": "disabled-first-load",
+      "status": "pass",
+      "expected": "enabled=false and DNS functional",
+      "observed": "packaged disabled config loaded"
+    },
+    {
+      "name": "query-A-example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "invalid-invalid-ip-address",
+      "status": "pass",
+      "expected": "export disabled and DNS functional",
+      "observed": "config accepted for reload; DNS remained functional"
+    },
+    {
+      "name": "query-A-example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "invalid-hostname-destination",
+      "status": "pass",
+      "expected": "export disabled and DNS functional",
+      "observed": "config accepted for reload; DNS remained functional"
+    },
+    {
+      "name": "query-A-example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "invalid-invalid-port",
+      "status": "pass",
+      "expected": "export disabled and DNS functional",
+      "observed": "config accepted for reload; DNS remained functional"
+    },
+    {
+      "name": "query-A-example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "invalid-unknown-protocol",
+      "status": "pass",
+      "expected": "export disabled and DNS functional",
+      "observed": "config accepted for reload; DNS remained functional"
+    },
+    {
+      "name": "query-A-example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "invalid-empty-allowlist",
+      "status": "pass",
+      "expected": "export disabled and DNS functional",
+      "observed": "config accepted for reload; DNS remained functional"
+    },
+    {
+      "name": "query-A-example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "invalid-unknown-property",
+      "status": "pass",
+      "expected": "export disabled and DNS functional",
+      "observed": "config accepted for reload; DNS remained functional"
+    },
+    {
+      "name": "query-A-example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "invalid-wrong-data-type",
+      "status": "pass",
+      "expected": "export disabled and DNS functional",
+      "observed": "config accepted for reload; DNS remained functional"
+    },
+    {
+      "name": "query-A-example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-A-allowed-exact.example.org",
+      "status": "not-measured",
+      "expected": "1 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-A-allowed-case-insensitive.example.org",
+      "status": "not-measured",
+      "expected": "1 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-A-surrounding-whitespace.example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-A-empty-server-name.example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-A-unknown-server-name.example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-A-example.org",
+      "status": "not-measured",
+      "expected": "1 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-AAAA-example.org",
+      "status": "not-measured",
+      "expected": "1 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-MX-example.net",
+      "status": "not-measured",
+      "expected": "1 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-TXT-example.com",
+      "status": "not-measured",
+      "expected": "1 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-A-nonexistent-subdomain.example.org",
+      "status": "not-measured",
+      "expected": "1 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-A-xn--bcher-kva.example",
+      "status": "not-measured",
+      "expected": "1 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-A-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc.ddddddddddddddddddddddddddddddddddddddddddddddddd.example.org",
+      "status": "not-measured",
+      "expected": "1 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-A-bad\\010name.example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "query-A-example.org",
+      "status": "not-measured",
+      "expected": "0 datagram(s)",
+      "observed": "capture unavailable"
+    },
+    {
+      "name": "disable-reload",
+      "status": "pass",
+      "expected": "export disabled without restart",
+      "observed": "DNS remained functional after config reload"
+    },
+    {
+      "name": "restart-with-app",
+      "status": "pass",
+      "expected": "app and config survive restart",
+      "observed": "container returned healthy API status"
+    },
+    {
+      "name": "update-retains-config",
+      "status": "pass",
+      "expected": "dnsApp.config retained",
+      "observed": "enabled config remained after update"
+    },
+    {
+      "name": "uninstall",
+      "status": "pass",
+      "expected": "app absent",
+      "observed": "app removed from API inventory"
+    },
+    {
+      "name": "reinstall",
+      "status": "pass",
+      "expected": "reinstallation succeeds and retained configuration is recorded",
+      "observed": "Technitium loaded the disabled packaged config after reinstall"
+    },
+    {
+      "name": "log-privacy",
+      "status": "pass",
+      "expected": "no test QNAMEs in normal logs",
+      "observed": "zero fixture-domain matches"
+    }
+  ],
+  "receiverValidation": {
+    "status": "pass",
+    "expectedRecords": 11,
+    "records": 11,
+    "duplicates": 0,
+    "disallowedRecords": 0,
+    "injectionRecords": 0,
+    "clientAddress": "192.0.2.1",
+    "queryTypes": ["A", "AAAA", "MX", "TXT"],
+    "messageTypes": ["query"],
+    "parserErrors": null
+  },
+  "limitations": [
+    "Cases marked not-measured lacked packet-capture privileges.",
+    "Receiver-side parser error counters were not exposed by the available read-only query and remain unmeasured."
+  ]
+}

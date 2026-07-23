@@ -1,0 +1,7 @@
+example.org A
+example.org AAAA
+example.net MX
+example.com TXT
+nonexistent-subdomain.example.org A
+xn--bcher-kva.example A
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc.ddddddddddddddddddddddddddddddddddddddddddddddddd.example.org A
