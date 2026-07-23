@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "test": "receiver-failure-recovery",
+  "status": "partial",
+  "technitium_version": "15.4",
+  "unifi_insights_version": "3.7.0",
+  "started_at": "2026-07-21T23:07:55Z",
+  "finished_at": "2026-07-21T23:11:53Z",
+  "duration_seconds": 238,
+  "topology": "isolated Technitium and ephemeral UniFi Insights Plus receiver on one documentation-safe Docker bridge",
+  "phases": {
+    "baseline": {
+      "queries": 5,
+      "receiver_records": 5
+    },
+    "receiver_down": {
+      "variant": "receiver process terminated while isolated supervisor was temporarily stopped",
+      "queries": 50,
+      "duration_milliseconds": 35080,
+      "receiver_process_verified_stopped": true,
+      "destination_unchanged": true
+    },
+    "network_path_down": {
+      "variant": "isolated receiver network disconnect",
+      "queries": 10,
+      "disconnect_verified": true
+    },
+    "recovery": {
+      "queries": 10,
+      "receiver_records": 10,
+      "network_recovery_queries": 10,
+      "network_recovery_records": 10,
+      "config_reloaded": false,
+      "technitium_restarted": false
+    }
+  },
+  "dns": {
+    "queries_total": 85,
+    "successful": 85,
+    "timeouts": 0,
+    "servfail": 0,
+    "latency_milliseconds": {
+      "minimum": 40,
+      "mean": 71.294,
+      "maximum": 98
+    }
+  },
+  "receiver": {
+    "baseline_expected": 5,
+    "baseline_observed": 5,
+    "baseline_duplicates": 0,
+    "recovery_expected": 10,
+    "recovery_observed": 10,
+    "recovery_duplicates": 0,
+    "outage_events_observed_after_recovery": 48,
+    "network_outage_events_observed_after_recovery": 0,
+    "network_recovery_expected": 10,
+    "network_recovery_observed": 10,
+    "network_recovery_duplicates": 0,
+    "field_errors": 0,
+    "dnsmasq_format_errors": 0
+  },
+  "exporter": {
+    "send_errors_before": 0,
+    "send_errors_after_outage": 0,
+    "send_errors_after": 0,
+    "dropped_before": 0,
+    "dropped_after": 0,
+    "counters_before": {
+      "accepted": 0,
+      "filtered": 0,
+      "sent": 0,
+      "dropped": 0,
+      "formatError": 0,
+      "sendError": 0,
+      "queueDepth": 0
+    },
+    "counters_after_outage": {
+      "accepted": 55,
+      "filtered": 0,
+      "sent": 55,
+      "dropped": 0,
+      "formatError": 0,
+      "sendError": 0,
+      "queueDepth": 0
+    },
+    "counters_after": {
+      "accepted": 85,
+      "filtered": 0,
+      "sent": 85,
+      "dropped": 0,
+      "formatError": 0,
+      "sendError": 0,
+      "queueDepth": 0
+    },
+    "udp_send_semantics": "no-send-error-signaled"
+  },
+  "logs": {
+    "measured": true,
+    "rate_limited_error_messages": 0,
+    "privacy_violations": 0,
+    "qname_hits": 0,
+    "client_ip_hits_all_normal_logs": 3,
+    "client_ip_hits_in_error_logs": 0,
+    "redacted_matching_lines": [
+      "[2026-07-21 23:07:57 UTC] [<test-client>:59610] [admin] User logged in.",
+      "[2026-07-21 23:07:57 UTC] [<test-client>:59614] [admin] DNS application 'UniFi Insights Exporter' was installed successfully.",
+      "[2026-07-21 23:08:00 UTC] [<test-client>:59642] [admin] DNS application 'UniFi Insights Exporter' app config was saved successfully."
+    ],
+    "exception_pattern_hits": 0
+  },
+  "resource_observations": {
+    "samples": [
+      {
+        "phase": "before_receiver_outage",
+        "timestamp": "2026-07-21T23:08:29Z",
+        "cpuPercent": 1.89,
+        "memoryUsage": "58.64MiB / 15GiB",
+        "pids": 32,
+        "threads": 32,
+        "vmRssKiB": 127564,
+        "vmSizeKiB": 36170516,
+        "fileDescriptors": 259,
+        "sockets": 8,
+        "processes": 1
+      },
+      {
+        "phase": "during_receiver_outage",
+        "timestamp": "2026-07-21T23:09:08Z",
+        "cpuPercent": 5.81,
+        "memoryUsage": "73.15MiB / 15GiB",
+        "pids": 35,
+        "threads": 35,
+        "vmRssKiB": 142028,
+        "vmSizeKiB": 36318036,
+        "fileDescriptors": 259,
+        "sockets": 8,
+        "processes": 1
+      },
+      {
+        "phase": "directly_after_receiver_recovery",
+        "timestamp": "2026-07-21T23:09:25Z",
+        "cpuPercent": 0.01,
+        "memoryUsage": "73.41MiB / 15GiB",
+        "pids": 34,
+        "threads": 33,
+        "vmRssKiB": 142412,
+        "vmSizeKiB": 36318000,
+        "fileDescriptors": 259,
+        "sockets": 8,
+        "processes": 1
+      },
+      {
+        "phase": "directly_after_network_recovery",
+        "timestamp": "2026-07-21T23:09:36Z",
+        "cpuPercent": 0.04,
+        "memoryUsage": "68.05MiB / 15GiB",
+        "pids": 34,
+        "threads": 34,
+        "vmRssKiB": 136788,
+        "vmSizeKiB": 36317208,
+        "fileDescriptors": 259,
+        "sockets": 8,
+        "processes": 1
+      },
+      {
+        "phase": "stable_recovery_after_120_seconds",
+        "timestamp": "2026-07-21T23:11:39Z",
+        "cpuPercent": 0.18,
+        "memoryUsage": "68.02MiB / 15GiB",
+        "pids": 27,
+        "threads": 27,
+        "vmRssKiB": 136696,
+        "vmSizeKiB": 36276120,
+        "fileDescriptors": 259,
+        "sockets": 8,
+        "processes": 1
+      }
+    ],
+    "deltas": {
+      "vmRssKiB": 9132,
+      "threads": -5,
+      "sockets": 0,
+      "fileDescriptors": 0
+    },
+    "monotonicGrowth": {
+      "vmRssKiB": false,
+      "threads": false,
+      "sockets": false,
+      "fileDescriptors": false
+    },
+    "potentialLeak": false
+  },
+  "pcap": {
+    "status": "not-measured",
+    "reason": "Host packet capture privileges were unavailable; receiver database counts were measured independently."
+  },
+  "checks": [
+    {
+      "name": "baseline-receiver",
+      "status": "pass",
+      "expected": "5 records",
+      "observed": "5 records"
+    },
+    {
+      "name": "receiver-process-stopped",
+      "status": "pass",
+      "expected": "receiver process absent and UDP listener absent",
+      "observed": "confirmed while supervisor was stopped"
+    },
+    {
+      "name": "destination-unchanged",
+      "status": "pass",
+      "expected": "same enabled destination",
+      "observed": "confirmed without reload"
+    },
+    {
+      "name": "receiver-network-disconnected",
+      "status": "pass",
+      "expected": "receiver absent from isolated network",
+      "observed": "confirmed"
+    }
+  ],
+  "not_measured": [
+    "host PCAP",
+    "kernel delivery acknowledgement for UDP datagrams",
+    "send-error log rate limiting because no local UDP send error was signaled"
+  ],
+  "failures": []
+}

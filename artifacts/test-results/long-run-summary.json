@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "status": "prepared-not-run",
+  "executed": false,
+  "samples": [],
+  "limitations": [
+    "A 12-hour or 24-hour live run has not been started in this execution."
+  ]
+}

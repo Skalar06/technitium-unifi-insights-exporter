@@ -1,0 +1,55 @@
+[
+  {
+    "name": "invalid-ip-address",
+    "config": {
+      "enabled": true,
+      "destination": { "address": "999.0.2.10", "port": 1516, "protocol": "UDP" },
+      "nodePolicy": { "mode": "allowList", "serverDomains": ["resolver-test.example.net"] }
+    }
+  },
+  {
+    "name": "hostname-destination",
+    "config": {
+      "enabled": true,
+      "destination": { "address": "receiver.example.net", "port": 1516, "protocol": "UDP" },
+      "nodePolicy": { "mode": "allowList", "serverDomains": ["resolver-test.example.net"] }
+    }
+  },
+  {
+    "name": "invalid-port",
+    "config": {
+      "enabled": true,
+      "destination": { "address": "192.0.2.10", "port": 65536, "protocol": "UDP" },
+      "nodePolicy": { "mode": "allowList", "serverDomains": ["resolver-test.example.net"] }
+    }
+  },
+  {
+    "name": "unknown-protocol",
+    "config": {
+      "enabled": true,
+      "destination": { "address": "192.0.2.10", "port": 1516, "protocol": "TCP" },
+      "nodePolicy": { "mode": "allowList", "serverDomains": ["resolver-test.example.net"] }
+    }
+  },
+  {
+    "name": "empty-allowlist",
+    "config": {
+      "enabled": true,
+      "destination": { "address": "192.0.2.10", "port": 1516, "protocol": "UDP" },
+      "nodePolicy": { "mode": "allowList", "serverDomains": [] }
+    }
+  },
+  {
+    "name": "unknown-property",
+    "config": {
+      "enabled": true,
+      "destination": { "address": "192.0.2.10", "port": 1516, "protocol": "UDP" },
+      "nodePolicy": { "mode": "allowList", "serverDomains": ["resolver-test.example.net"] },
+      "unexpected": true
+    }
+  },
+  {
+    "name": "wrong-data-type",
+    "config": { "enabled": "false" }
+  }
+]

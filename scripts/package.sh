@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 source "$(dirname "${BASH_SOURCE[0]}")/common.sh"
-"${PROJECT_ROOT}/scripts/build.sh"
+CI=true "${PROJECT_ROOT}/scripts/build.sh"
 
 readonly VERSION="0.1.0"
 readonly OUTPUT_DIR="${PROJECT_ROOT}/src/TechnitiumUniFiInsightsExporter/bin/Release/net10.0"

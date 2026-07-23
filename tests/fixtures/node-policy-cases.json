@@ -1,0 +1,7 @@
+[
+  { "name": "allowed-exact", "serverDomains": ["resolver-test.example.net"], "expectExport": true },
+  { "name": "allowed-case-insensitive", "serverDomains": ["RESOLVER-TEST.EXAMPLE.NET"], "expectExport": true },
+  { "name": "surrounding-whitespace", "serverDomains": [" resolver-test.example.net "], "expectExport": false },
+  { "name": "empty-server-name", "serverDomains": [""], "expectExport": false },
+  { "name": "unknown-server-name", "serverDomains": ["resolver-other.example.net"], "expectExport": false }
+]
